@@ -1,0 +1,14 @@
+<resources>
+        <string name="app_name">Business Card</string>
+        <string name="name">Хомедова Фазилатбону</string>
+        <string name="profession">Future Software Engineer</string>
+        <string name="phone">+7 999 555-12-34</string>
+        <string name="email">khomedova@example.com</string>
+        <string name="city">г. Тверь </string>
+        <string name="avatar_description">Фото владельца визитки</string>
+        <string name="btn_save">Сохранить контакт</string>
+        <string name="msg_saved">Контакт сохранён!</string>
+        <string name="phone_icon_description">Телефон</string>
+        <string name="email_icon_description">Электронная почта</string>
+        <string name="city_icon_description">Город</string>
+</resources>
