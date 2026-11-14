@@ -1,0 +1,46 @@
+package com.example.hellobutton
+import android.os.Bundle
+import android.widget.Button
+import android.widget.TextView
+import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContentView(R.layout.activity_main)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v,
+                                                                             insets ->
+            val systemBars =
+                insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(
+                systemBars.left, systemBars.top, systemBars.right,
+                systemBars.bottom
+            )
+            insets
+        }
+
+
+        val tvGreeting = findViewById<TextView>(R.id.tvGreeting)
+        val btnHello = findViewById<Button>(R.id.btnHello)
+        val btnReset = findViewById<Button>(R.id.btnReset)
+        val btnBye = findViewById<Button>(R.id.btnBye)
+
+        btnHello.setOnClickListener {
+            tvGreeting.text = "Привет, Android!"
+            Toast.makeText(this, "Кнопка нажата!", Toast.LENGTH_SHORT).show()
+        }
+
+        btnReset.setOnClickListener {
+            tvGreeting.text = "Привет!"
+        }
+
+        btnBye.setOnClickListener {
+            tvGreeting.text = "Пока, Android!"
+            Toast.makeText(this, "До встречи!", Toast.LENGTH_LONG).show()
+        }
+    }
+}
